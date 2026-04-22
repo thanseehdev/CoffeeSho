@@ -7,7 +7,7 @@ const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const images = useRef<HTMLImageElement[]>([]);
   const frameCount = 148;
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -26,9 +26,6 @@ const Hero = () => {
         img.src = `/herosection/images/ezgif-frame-${frameNum}.jpg`;
         img.onload = () => {
           loadedCount++;
-          if (loadedCount === frameCount) {
-            setImagesLoaded(true);
-          }
         };
         images.current[i] = img;
       }
