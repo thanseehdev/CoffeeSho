@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { Search, MapPin } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
