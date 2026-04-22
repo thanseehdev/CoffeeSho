@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coffee-dark: #1a0f0a;
+  --color-coffee-medium: #3c2a21;
+  --color-coffee-light: #d4a373;
+  --color-coffee-cream: #faedcd;
+  --color-coffee-accent: #bc6c25;
+
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Fix accidental cursor in UI */
+/* GLOBAL FIX */
+
+*:not(input):not(textarea) {
+  caret-color: transparent;
+}
+
+/* INPUT FIX */
+input,
+textarea {
+  caret-color: auto;
+}
+
+@layer base {
+  body {
+    @apply bg-coffee-dark text-coffee-cream font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-coffee-light to-coffee-cream;
+  }
+}
+
+/* Custom animations for floating elements */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
