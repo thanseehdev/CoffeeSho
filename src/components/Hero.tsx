@@ -93,7 +93,7 @@ const Hero = () => {
           ref={canvasRef}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        
+
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-coffee-dark/80 z-10" />
 
@@ -145,14 +145,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          style={{ opacity: useTransform(scrollYProgress, [0, 0.1], [1, 0]) }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-        >
-          <span className="text-coffee-cream/40 text-xs uppercase tracking-widest">Scroll to Explore</span>
-          <div className="w-px h-12 bg-gradient-to-b from-coffee-accent to-transparent" />
-        </motion.div>
+
       </div>
     </section>
   );
